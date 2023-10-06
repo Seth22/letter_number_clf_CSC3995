@@ -6,3 +6,9 @@ class file_number_exception(Exception):
 
 class file_type_exception(Exception):
     pass
+
+class datagen_not_found(Exception):
+    pass
+
+class model_not_found(Exception):
+    pass
