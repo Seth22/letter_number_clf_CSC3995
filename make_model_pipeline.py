@@ -1,12 +1,12 @@
 from preprocess import data_retrieval,train_val_split, validation
 from model import model
 
-def make_model(input_dir, output_dir, filetype, train_batch_size, val_batch_size, loss, optimizer, metric, epochs, steps_per_epoch, validation_steps):
+def make_model(input_dir, output_dir, filetype=".jpeg", train_batch_size=40, val_batch_size=40, loss='categorical_crossentropy', optimizer='rmprop', metric=['accuracy'], epochs=25, steps_per_epoch=20, validation_steps=5, model_name="clf"):
     #Process and get data ready for model\
     print("Processing data....")
     process_data(input_dir,output_dir, filetype)
     print("Done \nGenerating model data....")
-    
+
     #generate model data
     seq_nn_datagen(output_dir, train_batch_size, val_batch_size)
     print("Done \n Creating and training model....")

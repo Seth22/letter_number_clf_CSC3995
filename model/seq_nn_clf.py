@@ -8,7 +8,7 @@ train_generator = None
 validation_generator = None
 model = None
 
-def train_datagen(input_dir, batch_size_number=40):
+def train_datagen(input_dir, batch_size_number):
     training_datagen = ImageDataGenerator(
         rescale = 1./255,
         rotation_range=40,
@@ -27,7 +27,7 @@ def train_datagen(input_dir, batch_size_number=40):
     )
 
 
-def val_datagen(input_dir, input_batch_size=40):
+def val_datagen(input_dir, input_batch_size):
     validation_datagen = ImageDataGenerator(rescale = 1./255)
 
     validation_generator = validation_datagen.flow_from_directory(
@@ -39,7 +39,7 @@ def val_datagen(input_dir, input_batch_size=40):
 
 
 #default loss, optimizer and metrics from POC
-def create_model(loss_input='categorical_crossentropy',optimizer_input='rmprop',metrics_input=['accuracy']):
+def create_model(loss_input, optimizer_input ,metrics_input):
     model = tf.keras.models.Sequential([
         # Note the input shape is the desired size of the image 150x150 with 3 bytes color
         # This is the first convolution
@@ -64,7 +64,7 @@ def create_model(loss_input='categorical_crossentropy',optimizer_input='rmprop',
     model.compile(loss = loss_input, optimizer=optimizer_input, metrics=metrics_input)
 
 
-def train_model(epochs_number=25, steps_per_epoch_number=20, validation_steps_number=5, verbose_input = 1, model_name="clf"):
+def train_model(epochs_number, steps_per_epoch_number, validation_steps_number, model_name, verbose_input = 1,):
     if train_generator == None:
         raise exception.datagen_not_found("No training datagen found, try using train_datagen function")
 

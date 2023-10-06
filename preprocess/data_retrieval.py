@@ -7,7 +7,7 @@ sorted_images_dir = None
 #takes input directory of images and sorts them by row into output directory
 #filetype defaults to .jpeg from camera images 
 
-def sort_images(input_dir, output_dir,filetype=".jpeg"):
+def sort_images(input_dir, output_dir,filetype):
     # Create the output directory if it doesn't exist
     
     os.makedirs(output_dir, exist_ok=True)
