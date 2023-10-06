@@ -1,5 +1,6 @@
 from preprocess import data_retrieval,train_val_split, validation
-from model import model
+from model import seq_nn_clf as model
+
 
 def make_model(input_dir, output_dir, filetype=".jpeg", train_batch_size=40, val_batch_size=40, loss='categorical_crossentropy', optimizer='rmprop', metric=['accuracy'], epochs=25, steps_per_epoch=20, validation_steps=5, model_name="clf"):
     #Process and get data ready for model\

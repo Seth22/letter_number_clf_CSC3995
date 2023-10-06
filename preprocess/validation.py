@@ -1,5 +1,5 @@
 import os, shutil 
-import exception
+from . import exception
 
 #This works for orginal dataset we used in the project(each row is equal to a class)
 #Does not generalize for all datasets 

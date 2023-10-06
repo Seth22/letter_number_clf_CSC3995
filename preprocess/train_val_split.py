@@ -1,6 +1,6 @@
 import os, shutil
 import random
-import data_retrieval, exception
+from . import data_retrieval, exception
 
 #splits class sorted images into a training and validation split 
 #if no input_dir used, uses same dir as used in data_retrieval
