@@ -1,6 +1,7 @@
 import os, shutil
 import random
 import data_retrieval, exception
+import logging
 
 
 # splits class sorted images into a training and validation split
@@ -9,7 +10,7 @@ def train_val_split(output_dir, input_dir=data_retrieval.sorted_images_dir):
     class_dirs = ['0', '1', '7', '8', '9', 'k', 'l', 'm', 'n', 'p']
 
     # create target directories ndnmol and ndnmol_test_set and set variables to remember location
-
+    logging.info("Creating train/test directories")
     ndnmol_dir = f"{output_dir}/ndnmol"
     ndnmol_test_dir = f"{output_dir}/ndnmol_test_set"
 
@@ -25,7 +26,7 @@ def train_val_split(output_dir, input_dir=data_retrieval.sorted_images_dir):
     for dirs in class_dirs:
         os.mkdir(f"{ndnmol_dir}/{dirs}")
         os.mkdir(f"{ndnmol_test_dir}/{dirs}")
-
+    logging.info("Adding and splitting files...")
     # moves files from original dataset to our test/train dataset
     for folder in os.listdir(source_dir):
         # randomly selects 20 files to move to test set
@@ -36,3 +37,4 @@ def train_val_split(output_dir, input_dir=data_retrieval.sorted_images_dir):
         for filename in random_files:
             # moves randomly selected files to test set
             shutil.move(f"{ndnmol_dir}/{folder}/{filename}", f"{ndnmol_test_dir}/{folder}/{filename}")
+    logging.info("Train validation split done!")

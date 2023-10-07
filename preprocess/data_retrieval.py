@@ -1,4 +1,5 @@
 import os
+import logging
 from PIL import Image
 
 sorted_images_dir = None
@@ -16,7 +17,7 @@ def sort_images(input_dir, output_dir, filetype):
     # Define the folder names for each row
     row_folders = ["0", "1", "7", "8", "9", "l", "m", "k", "p", "n"]
     counter = 1
-
+    logging.info("Sorting input image files into classes based on row...")
     for filename in os.listdir(input_dir):
         if filename.endswith(filetype):
             input_path = os.path.join(input_dir, filename)
@@ -51,5 +52,4 @@ def sort_images(input_dir, output_dir, filetype):
                     row_folder = os.path.join(output_dir, row_folders[row_index])
                     square.save(os.path.join(row_folder, f"{counter}.png"))
                     counter += 1
-
-    sorted_images_dir = output_dir  # adds location for later use
+    logging.info("Sorting Done!")
