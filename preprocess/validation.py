@@ -1,5 +1,4 @@
 import os, shutil
-import exception
 import logging
 
 # This works for original dataset we used in the project(each row is equal to a class)
