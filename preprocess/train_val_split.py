@@ -1,6 +1,6 @@
 import os, shutil
 import random
-import data_retrieval, exception
+from . import data_retrieval, exception
 import logging
 
 
