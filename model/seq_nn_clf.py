@@ -2,7 +2,7 @@ import tensorflow as tf
 import keras_preprocessing
 from keras_preprocessing import image
 from keras_preprocessing.image import ImageDataGenerator
-from preprocess import train_val_split,exception
+from preprocess import exception
 
 train_generator = None
 validation_generator = None
