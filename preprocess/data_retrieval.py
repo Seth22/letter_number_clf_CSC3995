@@ -1,21 +1,21 @@
-import os 
+import os
 from PIL import Image
 
 sorted_images_dir = None
 
-#Code below written by ChatGPT with slight modification
-#takes input directory of images and sorts them by row into output directory
-#filetype defaults to .jpeg from camera images 
 
-def sort_images(input_dir, output_dir,filetype):
+# Code below written by ChatGPT with slight modification
+# takes input directory of images and sorts them by row into output directory
+# filetype defaults to .jpeg from camera images
+
+def sort_images(input_dir, output_dir, filetype):
     # Create the output directory if it doesn't exist
-    
+
     os.makedirs(output_dir, exist_ok=True)
 
     # Define the folder names for each row
     row_folders = ["0", "1", "7", "8", "9", "l", "m", "k", "p", "n"]
-    counter = 1;
-    
+    counter = 1
 
     for filename in os.listdir(input_dir):
         if filename.endswith(filetype):
@@ -52,5 +52,4 @@ def sort_images(input_dir, output_dir,filetype):
                     square.save(os.path.join(row_folder, f"{counter}.png"))
                     counter += 1
 
-
-    sorted_images_dir = output_dir #adds location for later use
+    sorted_images_dir = output_dir  # adds location for later use
