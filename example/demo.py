@@ -1,13 +1,17 @@
 import os
 import sys
+import logging
+
 from pipelines import pipeline
 
-# it ant pretty but it fixes the issue of modules not importing
-# further work needed along with some coffee
+logging.basicConfig(
+    level=logging.INFO,  # Set the log level to INFO
+    format='%(levelname)s - %(message)s'  # Customize the log message format
+)
+
+#needed to avoid werid cannot write error
 pardir = os.getcwd()
-sys.path.append(pardir)
 
+os.makedirs(f"{pardir}/demo_output", exist_ok=True)
 
-os.makedirs(f"{pardir}/example/demo_output", exist_ok=True)
-
-pipeline.make_model(f"{pardir}/example/org_input_images", f"{pardir}/example/demo_output")
+pipeline.make_model(f"{pardir}/org_input_images", f"{pardir}/demo_output")
