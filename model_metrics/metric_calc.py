@@ -1,9 +1,9 @@
 import os
 import random
 import shutil
+import logging
 import numpy as np
-
-from keras.preprocessing import image
+from keras.api.keras.preprocessing import image
 
 
 # used to select random files from a dataset for later graphs like confusion matrix
@@ -29,18 +29,31 @@ pred_number = {
     "p": 9,
 }
 
-def pred_from_label(input_dir, output_dir, model):
-    y_true = [None] * 100
-    y_pred = [None] * 100
+
+# Takes directory with folders that are class labels of images and a model as input
+# Returns a tuple with y_true and y_pred mainly for use in a confusion matrix
+
+def pred_from_label(input_dir, model):
+    y_true = []
+    y_proba = []
+    y_pred = []
 
     i = 0
     for folder in os.listdir(input_dir):
         for filename in os.listdir(f"{input_dir}/{folder}"):
+            # gets image ready for prediction
             img = image.load_img(f"{input_dir}/{folder}/{filename}", target_size=(150, 150))
             x = image.img_to_array(img)
             x = np.expand_dims(x, axis=0)
             images = np.vstack([x])
-            y_pred[i] = model.predict(images, verbose="False")
-            y_true[i] = pred_number.get(folder)
+
+            # adds prediction probabilities to y_proba at index i
+            y_proba.append(model.predict(images, verbose="False"))
+            # takes probabilites and collapses them to best guess saving that in y_pred
+            [pred_proba] = y_proba[i]
+            y_pred.append(np.argmax(pred_proba))
+            # adds true label to y_true
+            y_true.append(pred_number.get(folder))
+
             i += 1
     return y_true, y_pred

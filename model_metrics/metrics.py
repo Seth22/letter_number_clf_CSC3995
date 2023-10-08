@@ -5,8 +5,8 @@ import tensorflow as tf
 
 # Creates a confusion matrix given labels(y_true),predictions(y_pred) and labels for confusion matrix(class_labels)
 # Y_true and Y_pred must be ints, using metic_calc will help with this task
-def create_confusion_matrix(y_true, y_pred, class_labels):
-    # class_labels = ["0","1","7","8","9","k","l","m","n","p"] <- labels from POC
+def create_confusion_matrix(y_true, y_pred):
+    class_labels = ["0","1","7","8","9","k","l","m","n","p"]
 
     cfm = tf.math.confusion_matrix(y_true, y_pred)
 
