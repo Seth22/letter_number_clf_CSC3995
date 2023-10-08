@@ -1,15 +1,9 @@
 import tensorflow as tf
-import keras_preprocessing
-from keras_preprocessing import image
 from keras_preprocessing.image import ImageDataGenerator
 from preprocess import exception
 
-train_generator = None
-validation_generator = None
-model = None
-
-
 def train_datagen(input_dir, batch_size_number):
+
     training_datagen = ImageDataGenerator(
         rescale=1. / 255,
         rotation_range=40,
@@ -20,6 +14,7 @@ def train_datagen(input_dir, batch_size_number):
         horizontal_flip=True,
         fill_mode='nearest')
 
+    global train_generator
     train_generator = training_datagen.flow_from_directory(
         input_dir,
         target_size=(150, 150),
@@ -31,6 +26,7 @@ def train_datagen(input_dir, batch_size_number):
 def val_datagen(input_dir, input_batch_size):
     validation_datagen = ImageDataGenerator(rescale=1. / 255)
 
+    global validation_generator
     validation_generator = validation_datagen.flow_from_directory(
         input_dir,
         target_size=(150, 150),
@@ -41,6 +37,7 @@ def val_datagen(input_dir, input_batch_size):
 
 # default loss, optimizer and metrics from POC
 def create_model(loss_input, optimizer_input, metrics_input):
+    global model
     model = tf.keras.models.Sequential([
         # Note the input shape is the desired size of the image 150x150 with 3 bytes color
         # This is the first convolution
@@ -72,11 +69,9 @@ def train_model(epochs_number, steps_per_epoch_number, validation_steps_number, 
     if validation_generator is None:
         raise exception.datagen_not_found("No validation datagen found, try using validation_datagen function")
 
-    if model == None:
-        raise exception.model_not_found("No model found, try using create_model")
 
-    model = create_model()
     history = model.fit(train_generator, epochs=epochs_number, steps_per_epoch=steps_per_epoch_number,
                         validation_data=validation_generator, verbose=verbose_input,
                         validation_steps=validation_steps_number)
     model.save(model_name)
+    return model, history, model.summary()

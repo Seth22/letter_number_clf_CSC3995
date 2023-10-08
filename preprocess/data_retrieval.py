@@ -2,9 +2,6 @@ import os
 import logging
 from PIL import Image
 
-sorted_images_dir = None
-
-
 # Code below written by ChatGPT with slight modification
 # takes input directory of images and sorts them by row into output directory
 # filetype defaults to .jpeg from camera images
@@ -53,3 +50,4 @@ def sort_images(input_dir, output_dir, filetype):
                     square.save(os.path.join(row_folder, f"{counter}.png"))
                     counter += 1
     logging.info("Sorting Done!")
+

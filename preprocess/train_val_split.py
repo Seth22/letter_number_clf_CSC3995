@@ -6,7 +6,7 @@ import logging
 
 # splits class sorted images into a training and validation split
 # if no input_dir used, uses same dir as used in data_retrieval
-def train_val_split(output_dir, input_dir=data_retrieval.sorted_images_dir):
+def train_val_split(input_dir, output_dir):
     class_dirs = ['0', '1', '7', '8', '9', 'k', 'l', 'm', 'n', 'p']
 
     # create target directories ndnmol and ndnmol_test_set and set variables to remember location
