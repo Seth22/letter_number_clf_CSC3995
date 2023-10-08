@@ -13,7 +13,7 @@ def create_confusion_matrix(y_true, y_pred):
     sns.heatmap(cfm, annot=True, cmap='Oranges', xticklabels=class_labels, yticklabels=class_labels)
     plt.xlabel('Predicted Labels')
     plt.ylabel('True Labels')
-    plt.show()
+    plt.savefig("Confusion Matrix.png")
 
 
 # creates accuracy vs Validation accuracy with epochs graph using model history
@@ -32,4 +32,4 @@ def create_acc_val_epoch_graph(history):
     plt.legend(loc=0)
     plt.figure()
 
-    plt.show()
+    plt.savefig("Acc_val_epoch.png")
