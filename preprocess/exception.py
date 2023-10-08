@@ -12,3 +12,6 @@ class datagen_not_found(Exception):
 
 class model_not_found(Exception):
     pass
+
+class empty_labels(Exception):
+    pass
