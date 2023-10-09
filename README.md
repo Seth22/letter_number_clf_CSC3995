@@ -6,8 +6,7 @@
 - Add documentation
   - Add Requirements
 - Add unit testing
-- Add validation to pipeline 
-- In model metrics makes plt plots save to a file not display
+- Add validation to pipeline
 - Create a way for pretrained model to get novel predictions 
 
 ## Style notes
