@@ -5,3 +5,4 @@ import os
 pardir = os.getcwd()
 shutil.rmtree(f"{pardir}/clf")
 shutil.rmtree(f"{pardir}/demo_output")
+shutil.rmtree(f"{pardir}/graphs")

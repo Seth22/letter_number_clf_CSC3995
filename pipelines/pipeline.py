@@ -39,9 +39,9 @@ def make_model(input_dir, output_dir, filetype=".jpeg", train_batch_size=40, val
     #shows metrics
     logging.info("Doing prediction and label calculations...")
     y_true, y_pred = metric_calc.pred_from_label(f"{output_dir}/train_val_split/ndnmol_test_set", model_info[0])
-
+    os.mkdir(f"{output_dir}/graphs")
     logging.info("creating confusion matrix")
-    metrics.create_confusion_matrix(y_true, y_pred)
+    metrics.create_confusion_matrix(y_true, y_pred,f"{output_dir}/graphs/fig1.png")
 
     logging.info("Creating epoch graph")
-    metrics.create_acc_val_epoch_graph(model_info[2])
+    metrics.create_acc_val_epoch_graph(model_info[1],f"{output_dir}/graphs/fig2.png")
