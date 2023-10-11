@@ -15,3 +15,6 @@ class model_not_found(Exception):
 
 class empty_labels(Exception):
     pass
+
+class val_error(Exception):
+    pass
