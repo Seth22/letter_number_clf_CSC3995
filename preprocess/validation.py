@@ -20,7 +20,7 @@ def val_file_number(input_dir, filenumber, filetype=".png"):
     error = False
     counter = 0
     for folder in os.listdir(input_dir):
-        for filename in os.listdir(f"{input_dir}{folder}"):
+        for filename in os.listdir(f"{input_dir}/{folder}"):
             if filename.endswith(filetype):
                 counter += 1
         if counter != filenumber:
@@ -59,7 +59,7 @@ def val_file_location(input_dir):
     error = False
     for folder in os.listdir(input_dir):
         expected_filenumber_range = org_folder_number_key.get(folder)
-        for filename in os.listdir(f"{input_dir}{folder}"):
+        for filename in os.listdir(f"{input_dir}/{folder}"):
             if filename.endswith(".png"):
                 filename_number = int(
                     filename.split('.')[0])  # keeps only parts of filename before . and turns string into an int
@@ -68,7 +68,7 @@ def val_file_location(input_dir):
                     expected_filenumber_range[1]:
                 # some files in n directory are multiples of 100 so an extra check is needed
                 if not (folder == "n" and filename_number % 100 == 0):
-                    logging.info(f"Dataset contains file in wrong folder at: {input_dir}{folder}/{filename}")
+                    logging.error(f"Dataset contains file in wrong folder at: {input_dir}/{folder}/{filename}")
                     error = True
     return error
 
@@ -76,7 +76,7 @@ def val_file_repetition(input_dir):
     error = False
     for folder in os.listdir(input_dir):
         for filename in os.listdir(f"{input_dir}/{folder}"):
-            if filename in os.listdir(f"{input_dir}{folder}"):
+            if filename in os.listdir(f"{input_dir}/{folder}"):
                 logging.error(
                     f"Repeated files in training and test set \nFile:{filename} in {input_dir}/{folder} and {input_dir}/{folder}")
                 error = True
