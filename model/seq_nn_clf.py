@@ -5,14 +5,8 @@ from preprocess import exception
 def train_datagen(input_dir, batch_size_number):
 
     training_datagen = ImageDataGenerator(
-        rescale=1. / 255,
-        rotation_range=40,
-        width_shift_range=0.2,
-        height_shift_range=0.2,
-        shear_range=0.2,
-        zoom_range=0.2,
-        horizontal_flip=True,
-        fill_mode='nearest')
+        rescale=1. / 255)
+
 
     global train_generator
     train_generator = training_datagen.flow_from_directory(
