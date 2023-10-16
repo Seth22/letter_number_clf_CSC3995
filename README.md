@@ -4,7 +4,7 @@
 
 ## TO-DO
 - [ ] Add documentation
-  - [ ] Add Requirements
+  - [x] Add Requirements
 - [ ] Add unit testing
 - [x] Add validation to pipeline
 - [ ] Create a way for pretrained model to get novel predictions 
