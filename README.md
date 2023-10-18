@@ -6,7 +6,10 @@
 - [ ] Add documentation
   - [x] Add Requirements
 - [ ] Add unit testing
+  -  In progress!
 - [x] Add validation to pipeline
+- [ ] Refactor for model and pipeline to be objects not functions?
+  -  [ ] Pipeline objecting using builder pattern
 - [ ] Create a way for pretrained model to get novel predictions 
 
 ## Style notes
