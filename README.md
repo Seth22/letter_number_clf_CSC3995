@@ -3,12 +3,11 @@
 - Taking Juypter notebook and turning it into a built out application
 
 ## TO-DO
-- Add documentation
-  - Add Requirements
-- Add unit testing
-- Add validation to pipeline 
-- In model metrics makes plt plots save to a file not display
-- Create a way for pretrained model to get novel predictions 
+- [ ] Add documentation
+  - [x] Add Requirements
+- [ ] Add unit testing
+- [x] Add validation to pipeline
+- [ ] Create a way for pretrained model to get novel predictions 
 
 ## Style notes
 - Snake case is used for function and variable names
