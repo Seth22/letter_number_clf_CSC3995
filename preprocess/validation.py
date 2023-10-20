@@ -17,6 +17,10 @@ org_folder_number_key = {
 }
 
 def val_file_number(input_dir, filenumber, filetype=".png"):
+    # makes sure filetype has . if not adds it
+    if filetype[0] != ".":
+        filetype =  "." + filetype
+
     error = False
     counter = 0
     for folder in os.listdir(input_dir):
@@ -46,13 +50,13 @@ def val_filetypes(input_dir, filetype=".jpeg"):
 def val_remove_filetypes(input_dir, filetype):
     # makes sure filetype has . if not adds it
     if filetype[0] != ".":
-        filetype = filetype + "."
+        filetype =  "." + filetype
 
     for folder in os.listdir(input_dir):
         for filename in os.listdir(f"{input_dir}/{folder}"):
             if not filename.endswith(filetype):
                 logging.info(f"remove file in folder:{folder}: {input_dir}/{folder}/{filename}")
-                shutil.rmtree(f"{input_dir}/{folder}/{filename}")
+                os.remove(f"{input_dir}/{folder}/{filename}")
 
 
 def val_file_location(input_dir):
