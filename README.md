@@ -5,8 +5,8 @@
 ## TO-DO
 - [ ] Add documentation
   - [x] Add Requirements
-- [ ] Add unit testing
-  -  In progress!
+- [x] Add unit testing
+  -  [ ] Add more tests besides validation
 - [x] Add validation to pipeline
 - [ ] Refactor for model and pipeline to be objects not functions?
   -  [ ] Pipeline objecting using builder pattern
