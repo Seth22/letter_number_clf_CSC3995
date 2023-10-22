@@ -13,10 +13,12 @@
     - [ ] Preprocess
     - [ ] Tests
 - [ ] Add unit testing
-  -  In progress!
+  -  Added unit testing for validation
+  - [ ] add more unit tests
 - [x] Add validation to pipeline
 - [ ] Refactor for model and pipeline to be objects not functions?
   -  [ ] Pipeline objecting using builder pattern
+  -  [ ] Model due to specific ordering of functions and global variables may be better as object
 - [ ] Create a way for pretrained model to get novel predictions 
 
 ## Style notes
