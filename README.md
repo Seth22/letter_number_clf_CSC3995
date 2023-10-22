@@ -5,6 +5,13 @@
 ## TO-DO
 - [ ] Add documentation
   - [x] Add Requirements
+  - [ ] Add documentation for submodules 
+    - [ ] Example
+    - [x] Model
+    - [ ] Model_metrics
+    - [ ] Pipelines
+    - [ ] Preprocess
+    - [ ] Tests
 - [ ] Add unit testing
   -  In progress!
 - [x] Add validation to pipeline
