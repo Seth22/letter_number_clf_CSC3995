@@ -5,8 +5,15 @@
 ## TO-DO
 - [ ] Add documentation
   - [x] Add Requirements
-- [x] Add unit testing
-  -  [ ] Add more tests besides validation
+  - [ ] Add documentation for submodules 
+    - [ ] Example
+    - [x] Model
+    - [ ] Model_metrics
+    - [ ] Pipelines
+    - [ ] Preprocess
+    - [ ] Tests
+- [ ] Add unit testing
+  -  In progress!
 - [x] Add validation to pipeline
 - [ ] Refactor for model and pipeline to be objects not functions?
   -  [ ] Pipeline objecting using builder pattern
