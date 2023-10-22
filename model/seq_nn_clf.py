@@ -11,7 +11,7 @@ def train_datagen(input_dir, batch_size):
     Current use:
         Used in **train_model** as data to train model
     Important Notes:
-        **ORDER MATTERS** order is heavily used in this file this function must be called **before** train_model
+        **ORDER MATTERS** This function must be called **before** train_model
     :param input_dir: Directory with training set
     :param batch_size: Batch size for training data generation
     :return: None
@@ -37,7 +37,7 @@ def val_datagen(input_dir, batch_size):
     Current use:
         Used in **train_model** as data to validate model at each epoch
     Important Notes:
-        **ORDER MATTERS** order is heavily used in this file this function must be called **before** train_model
+        **ORDER MATTERS** This function must be called **before** train_model
     :param input_dir: Directory with validation data set
     :param batch_size: Batch size for validation data generation
     :return: None
@@ -63,7 +63,7 @@ def create_model(loss_input, optimizer_input, metrics_input):
         Used in **train_model** as the main model creation function
         **Creates global variable Model** which is called upon in other functions such as train_model
     IMPORTANT NOTES:
-        **ORDER MATTERS** order is heavily used in this file
+        **ORDER MATTERS** This function must be called **before** train_model
     :param loss_input: Defined in TensorFlow model gen
     :param optimizer_input: Defined in TensorFlow model gen
     :param metrics_input: Defined in TensorFlow model gen
