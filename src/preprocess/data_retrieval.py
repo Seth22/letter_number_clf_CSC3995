@@ -1,5 +1,6 @@
-import os
 import logging
+import os
+
 from PIL import Image
 
 
@@ -16,7 +17,7 @@ def sort_images(input_dir, output_dir, filetype):
     :param input_dir: Directory with input images in a 10x10 grid
     :param output_dir: Desired output destination for labeled images
     :param filetype: Type of image file
-    :return: Void, creates folders and places images in output_dir
+    :return: Void
     """
     # Create the output directory if it doesn't exist
 
