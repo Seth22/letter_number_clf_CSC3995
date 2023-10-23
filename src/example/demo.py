@@ -13,4 +13,4 @@ pardir = os.getcwd()
 
 os.makedirs(f"{pardir}/demo_output", exist_ok=True)
 
-pipeline.make_model(f"{pardir}/org_input_images", f"{pardir}/demo_output", epochs=5)
+pipeline.make_model(f"{pardir}/org_input_images", f"{pardir}/demo_output")
