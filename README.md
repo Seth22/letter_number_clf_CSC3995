@@ -10,7 +10,7 @@
     - [x] Model
     - [ ] Model_metrics
     - [ ] Pipelines
-    - [ ] Preprocess
+    - [x] Preprocess
     - [ ] Tests
 - [ ] Add unit testing
   -  Added unit testing for validation
