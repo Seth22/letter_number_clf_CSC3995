@@ -1,6 +1,6 @@
 import os, shutil
 import random
-import exception
+from . import exception
 import logging
 
 
