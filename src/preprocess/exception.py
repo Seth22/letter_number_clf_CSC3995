@@ -1,3 +1,8 @@
+"""
+Custom Exceptions are defined here
+
+May be worth considering moving to different directory
+"""
 class input_dir_empty(Exception):
     pass
 
