@@ -1,12 +1,22 @@
 import os, shutil
 import random
-from . import exception
+import exception
 import logging
 
 
-# splits class sorted images into a training and validation split
-# if no input_dir used, uses same dir as used in data_retrieval
 def train_val_split(input_dir, output_dir):
+    """
+    Function:
+        Splits **sorted** image files(*with directory name corresponding to label*) into a training and validation set with
+        **80%** of images used for training and a random selection(from each class) of **20%** used for validation set
+        Outputs training set in *output_dir/ndnmol* and validation set as *output_dir/ndnmol_test_set*
+    Important Note:
+        Current implementation expects the rows in order to be 0,1,7,8,9,l,m,k,p,n if different labels are needed based
+        on row **class_dir** must be changed
+    :param input_dir: Expects an input directory with 10 class folders
+    :param output_dir: Directory to put training and validation files
+    :return: Void
+    """
     class_dirs = ['0', '1', '7', '8', '9', 'k', 'l', 'm', 'n', 'p']
 
     # create target directories ndnmol and ndnmol_test_set and set variables to remember location
