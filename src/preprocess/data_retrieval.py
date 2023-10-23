@@ -2,11 +2,22 @@ import os
 import logging
 from PIL import Image
 
-# Code below written by ChatGPT with slight modification
-# takes input directory of images and sorts them by row into output directory
-# filetype defaults to .jpeg from camera images
 
 def sort_images(input_dir, output_dir, filetype):
+    """
+    Function:
+        Takes a directory containing one or more **SQUARE** image files with each row being a specified letter or number
+        *see src/example/org_input_images for reference* then outputs them into labeled directories based on row
+    Important Note:
+        Current implementation expects the rows in order to be 0,1,7,8,9,l,m,k,p,n if different labels are needed based
+        on row **row_folders** must be changed
+    ChatGPT:
+        Code mostly written by ChatGPt see POC for prompt
+    :param input_dir: Directory with input images in a 10x10 grid
+    :param output_dir: Desired output destination for labeled images
+    :param filetype: Type of image file
+    :return: Void, creates folders and places images in output_dir
+    """
     # Create the output directory if it doesn't exist
 
     os.makedirs(output_dir, exist_ok=True)
