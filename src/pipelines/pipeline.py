@@ -9,6 +9,25 @@ import os
 def make_model(input_dir, output_dir, filetype=".jpeg", train_batch_size=40, val_batch_size=40,
                loss='categorical_crossentropy', optimizer='rmsprop', metric=['accuracy'], epochs=25, steps_per_epoch=20,
                validation_steps=5, model_name="clf"):
+
+    """
+    Function:
+        Pipeline to put all submodules together to train a sequential neural network on image data
+        See *TensorFlow* docs for allowable arguements on all params except input_dir, output_dir, filetype, model_name
+    :param input_dir: Input Directory with image files
+    :param output_dir: Output directory for sorted images, ndnmol images
+    :param filetype: Filetype of original images *default:  ".jpeg"*
+    :param train_batch_size: Batch size for training *default: 40*
+    :param val_batch_size:  Batch size for validation *default: 40*
+    :param loss: loss function for seq NN *default: "cateforical_crossentropy*
+    :param optimizer: Optimizer for Seq NN*default: 'accuracy'
+    :param metric: Metric to determine model accuracy *default: ["accuracy"]
+    :param epochs: Number of epochs for model training *default 25*
+    :param steps_per_epoch: Training steps for epoch *default: 20*
+    :param validation_steps: Validation steps for epoch *default 20*
+    :param model_name: Name of model to save can be any string *default clf*
+    :return: Logging messages
+    """
     # Process and get data ready for model
     logging.info("Processing data....")
 
