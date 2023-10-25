@@ -9,7 +9,7 @@
     - [ ] Example
     - [x] Model
     - [ ] Model_metrics
-    - [ ] Pipelines
+    - [x] Pipelines
     - [x] Preprocess
     - [ ] Tests
 - [ ] Add unit testing
