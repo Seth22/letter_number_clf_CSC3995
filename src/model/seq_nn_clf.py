@@ -107,6 +107,8 @@ def train_model(epochs_number, steps_per_epoch_number, validation_steps_number, 
         2. The history of the model, useful for creating metrics that are epoch related
         3. Model.summary(), useful for basic model information(see TensorFlow doc for more info)
     :return: A tuple with the 3 elements [model, history, model.summary()]
+    :exception datagen_not_found: If no training or validtion data was found from train_datagen() or validation_datagen() functions
+    :exception model_not_found
     """
     if train_generator is None:
         raise exception.datagen_not_found("No training datagen found, try using train_datagen function")
