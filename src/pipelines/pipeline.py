@@ -7,7 +7,7 @@ import os
 
 
 def make_model(input_dir, output_dir, filetype=".jpeg", train_batch_size=40, val_batch_size=40,
-               loss='categorical_crossentropy', optimizer='rmsprop', metric=['accuracy'], epochs=25, steps_per_epoch=20,
+               loss='categorical_crossentropy', optimizer='rmsprop', metric=['accuracy'], epochs=15, steps_per_epoch=20,
                validation_steps=5, model_name="clf"):
 
     """
@@ -22,7 +22,7 @@ def make_model(input_dir, output_dir, filetype=".jpeg", train_batch_size=40, val
     :param loss: loss function for seq NN *default: "cateforical_crossentropy*
     :param optimizer: Optimizer for Seq NN*default: 'accuracy'
     :param metric: Metric to determine model accuracy *default: ["accuracy"]
-    :param epochs: Number of epochs for model training *default 25*
+    :param epochs: Number of epochs for model training *default 15*
     :param steps_per_epoch: Training steps for epoch *default: 20*
     :param validation_steps: Validation steps for epoch *default 20*
     :param model_name: Name of model to save can be any string *default clf*
