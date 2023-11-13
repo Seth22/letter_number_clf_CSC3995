@@ -13,7 +13,7 @@
     - [x] Preprocess
     - [ ] Tests
 - [ ] Add unit testing
-  -  Added unit testing for validation
+  -  [ ]Added unit testing for validation
   - [ ] add more unit tests
 - [x] Add validation to pipeline
 - [ ] Refactor for model and pipeline to be objects not functions?
